@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4834492660882967373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7870995082921720239}
+  - component: {fileID: 2704015406577746865}
+  - component: {fileID: 3146294260537167053}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7870995082921720239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834492660882967373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2704015406577746865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834492660882967373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1374f01c613f97947a3df74a4c4fea32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cleanliness:
+    _value: 100
+    DecayRate: 1
+    HappinessWeight: 0.25
+  Hunger:
+    _value: 100
+    DecayRate: 1
+    HappinessWeight: 0.35
+  Love:
+    _value: 100
+    DecayRate: 1
+    HappinessWeight: 0.4
+--- !u!114 &3146294260537167053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834492660882967373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d00be4286ec15742b33f25bd534b08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyGainByHappiness:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 75
+      value: 0.005
+      inSlope: 0.00017523451
+      outSlope: 0.00017523451
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.21819839
+    - serializedVersion: 3
+      time: 95
+      value: 0.01
+      inSlope: 0.0005338678
+      outSlope: 0.0005338678
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.107852936
+      outWeight: 0.37520903
+    - serializedVersion: 3
+      time: 100
+      value: 0.02
+      inSlope: 0.0019999999
+      outSlope: 0.0019999999
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SecondsPerTick: 1
+  _money: 1
