@@ -22,13 +22,14 @@ public class DragonStats : Singleton<DragonStats>
             }
         }
 
-        public float DecayRate, HappinessWeight;
-        
+        public AnimationCurve DecayByValue;
+
+        public float HappinessWeight;
         public float WeightedValue => Value * HappinessWeight;
 
         public void Update ()
         {
-            Value -= DecayRate * Time.deltaTime;
+            Value -= DecayByValue.Evaluate(Value) * Time.deltaTime;
         }
     }
 
