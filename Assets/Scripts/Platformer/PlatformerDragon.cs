@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float TurnSpeed, Drag;
+    public float TurnSpeed, CriticalVerticality;
 
     Rigidbody2D rb;
     bool flapped;
@@ -52,6 +52,11 @@ public class PlatformerDragon : MonoBehaviour
         }
 
         var vert = verticality(effectiveRotation);
+
+        if (vert >= CriticalVerticality)
+        {
+            rotDir.y = Mathf.Sign(rb.velocity.y);
+        }
 
         var newVel = new Vector2
         (
