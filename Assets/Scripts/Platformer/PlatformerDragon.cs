@@ -5,28 +5,42 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float TurnSpeed, CriticalVerticality;
+    public float TurnSpeed, CriticalVerticality, JumpDelay;
+    public AnimationCurve JumpCurve;
+
+    float jumpTime => JumpCurve.keys[JumpCurve.keys.Length - 1].time;
+    bool jumping => jumpTimer <= jumpTime;
 
     Rigidbody2D rb;
-    bool flapped;
+    float jumpTimer, jumpDelayTimer;
+    float horMem;
 
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
+        jumpTimer = jumpTime;
     }
 
     void Update ()
     {
-        if (!flapped)
+        if (jumpDelayTimer <= 0 && Input.GetButton ("Jump"))
         {
-            flapped = Input.GetButtonDown("Jump");
+            jumpDelayTimer = JumpDelay;
+            jumpTimer = 0;
+            horMem = rb.velocity.x;
+            rb.MoveRotation(0);
         }
+        jumpDelayTimer -= Time.deltaTime;
+        jumpTimer += Time.deltaTime;
     }
 
     void FixedUpdate ()
     {
-        var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-        rb.MoveRotation(rb.rotation + rotateDelta);
+        if (!jumping)
+        {
+            var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+            rb.MoveRotation(rb.rotation + rotateDelta);
+        }
 
         // rb.rotation doesn't constrain itself to [0, 360), while transform.rotation.eulerAngles.z lags behind by a frame
         var effectiveRotation = Mathf.Repeat(rb.rotation, 360);
@@ -65,6 +79,11 @@ public class PlatformerDragon : MonoBehaviour
         ).normalized * rb.velocity.magnitude;
 
         rb.velocity = newVel;
+
+        if (jumping)
+        {
+            rb.MovePosition(rb.position + Vector2.up * JumpCurve.Evaluate(jumpTimer));
+        }
     }
 
     // returns 0 if perfectly horizontal, 1 if perfectly vertical, or something in between
