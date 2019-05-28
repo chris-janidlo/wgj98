@@ -41,7 +41,8 @@ public class PlatformerDragon : MonoBehaviour
         }
 
         if (grounded)
-        {   
+        {
+            rb.velocity = Vector2.zero;
             rb.MovePosition(rb.position + Vector2.right * MoveSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
         }
 
