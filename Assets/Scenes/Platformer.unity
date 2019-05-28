@@ -355,7 +355,7 @@ Camera:
   m_GameObject: {fileID: 656816365}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 882771306}
   - component: {fileID: 882771305}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,7 +575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98432753bb768834899235a7b5ee2181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 10
+  GroundedThreshold: 0
   TurnSpeed: 180
+  DropSpeed: -9
   CriticalVerticality: 0.05
   JumpDelay: 0.4
   JumpCurve:

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float TurnSpeed, CriticalVerticality, JumpDelay;
+    public float MoveSpeed, GroundedThreshold, TurnSpeed, DropSpeed, CriticalVerticality, JumpDelay;
     public AnimationCurve JumpCurve;
 
     float jumpTime => JumpCurve.keys[JumpCurve.keys.Length - 1].time;
@@ -13,7 +13,7 @@ public class PlatformerDragon : MonoBehaviour
 
     Rigidbody2D rb;
     float jumpTimer, jumpDelayTimer;
-    float horMem;
+    bool grounded;
 
     void Start ()
     {
@@ -27,7 +27,6 @@ public class PlatformerDragon : MonoBehaviour
         {
             jumpDelayTimer = JumpDelay;
             jumpTimer = 0;
-            horMem = rb.velocity.x;
         }
         jumpDelayTimer -= Time.deltaTime;
         jumpTimer += Time.deltaTime;
@@ -35,10 +34,15 @@ public class PlatformerDragon : MonoBehaviour
 
     void FixedUpdate ()
     {
-        if (!jumping)
+        if (!grounded && !jumping)
         {
             var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
             rb.MoveRotation(rb.rotation + rotateDelta);
+        }
+
+        if (grounded)
+        {   
+            rb.MovePosition(rb.position + Vector2.right * MoveSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
         }
 
         // rb.rotation doesn't constrain itself to [0, 360), while transform.rotation.eulerAngles.z lags behind by a frame
@@ -74,7 +78,7 @@ public class PlatformerDragon : MonoBehaviour
         var newVel = new Vector2
         (
             rotDir.x * (1 - vert),
-            rotDir.y * vert
+            Input.GetButton("Drop") ? DropSpeed : rotDir.y * vert
         ).normalized * rb.velocity.magnitude;
 
         rb.velocity = newVel;
@@ -83,6 +87,22 @@ public class PlatformerDragon : MonoBehaviour
         {
             rb.MovePosition(rb.position + Vector2.up * JumpCurve.Evaluate(jumpTimer));
         }
+    }
+
+    void OnCollisionEnter2D (Collision2D col)
+    {
+        foreach (var contact in col.contacts)
+        {
+            if (contact.normal.y >= GroundedThreshold)
+            {
+                grounded = true;
+            }
+        }
+    }
+
+    void OnCollisionExit2D (Collision2D col)
+    {
+        grounded = false;
     }
 
     // returns 0 if perfectly horizontal, 1 if perfectly vertical, or something in between
