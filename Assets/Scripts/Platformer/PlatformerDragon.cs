@@ -28,7 +28,6 @@ public class PlatformerDragon : MonoBehaviour
             jumpDelayTimer = JumpDelay;
             jumpTimer = 0;
             horMem = rb.velocity.x;
-            rb.MoveRotation(0);
         }
         jumpDelayTimer -= Time.deltaTime;
         jumpTimer += Time.deltaTime;
