@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using crass;
 
 public class PlatformerManager : MonoBehaviour
@@ -12,18 +13,61 @@ public class PlatformerManager : MonoBehaviour
         public List<GemPattern> Patterns;
     }
 
+    public float ModeTime;
     public List<GemPatternGroup> Levels;
+
+    public TextMeshProUGUI TimerText, CenterText;
+
+    public int CountdownTime, FinishTime;
+    [Range(0, 1)]
+    public float FinishTimescale;
 
     [SerializeField]
     int level, subLevel;
 
     List<GemPattern> currentPatterns => Levels[level].Patterns;
 
-    void Start ()
+    float timer;
+
+    IEnumerator Start ()
     {
+        generateScreenEdgeColliders();
+        timer = ModeTime;
+        Time.timeScale = 0;
+
+        for (int i = CountdownTime; i >= 1; i--)
+        {
+            CenterText.text = i.ToString();
+            yield return new WaitForSecondsRealtime(1);
+        }
+
         currentPatterns.ShuffleInPlace();
         spawnNextPattern();
-        generateScreenEdgeColliders();
+
+        CenterText.text = "GO";
+        yield return new WaitForSecondsRealtime(1);
+        CenterText.text = "";
+    }
+
+    void Update ()
+    {
+        TimerText.text = String.Format("%d", Mathf.Clamp(timer, 0, ModeTime));
+
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            StartCoroutine(endRoutine());
+        }
+    }
+
+    IEnumerator endRoutine ()
+    {
+        Time.timeScale = FinishTimescale;
+        CenterText.text = "FINISH";
+        
+        yield return new WaitForSecondsRealtime(FinishTime);
+        // load next scene
+        Debug.Log("we outta heres");
     }
 
     void spawnNextPattern ()
