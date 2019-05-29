@@ -43,6 +43,8 @@ public class PlatformerDragon : MonoBehaviour
         {
             jumpDelayTimer = JumpDelay;
             jumpTimer = 0;
+
+            rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
 
             bodyAnimator.Play("DragonPlatformer_flap", 0, 0);
@@ -71,7 +73,6 @@ public class PlatformerDragon : MonoBehaviour
 
         if (grounded)
         {
-            rb.velocity = Vector2.zero;
             rb.MovePosition(rb.position + Vector2.right * MoveSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
         }
         else
