@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785100383}
   - component: {fileID: 785100384}
+  - component: {fileID: 785100385}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -493,8 +494,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785100382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.12, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalPosition: {x: -2.23, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 882771304}
   m_RootOrder: 0
@@ -536,7 +537,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5d3ec93582a09f34e93c57fefb1d8acc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c1a528c39d244a8784fba04eb4dfdeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -547,6 +548,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &785100385
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785100382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14655f14eac0248cfba8b64339aae2f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &882771302
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +579,7 @@ GameObject:
   - component: {fileID: 882771303}
   - component: {fileID: 882771306}
   - component: {fileID: 882771305}
+  - component: {fileID: 882771307}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -579,7 +600,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.045
+  m_LinearDrag: 0.03
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -615,18 +636,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0353808, y: -0.008176804}
+  m_Offset: {x: -0.80113226, y: 0.039089203}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0707612, y: 0.6908016}
+  m_Size: {x: 4.717884, y: 2.284645}
   m_EdgeRadius: 0
 --- !u!114 &882771306
 MonoBehaviour:
@@ -643,10 +664,10 @@ MonoBehaviour:
   MoveSpeed: 8
   DropSpeed: -9
   JumpDelay: 0.4
-  GroundedThreshold: 0.1
-  ContactThreshold: 1
-  CriticalVerticality: 0.05
   TurnSpeed: 180
+  ContactThreshold: 1
+  GroundedThreshold: 0.1
+  CriticalVerticality: 0.05
   JumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -671,6 +692,32 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &882771307
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882771302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -4.6900597, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.9890957, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1040919396
 GameObject:
   m_ObjectHideFlags: 0

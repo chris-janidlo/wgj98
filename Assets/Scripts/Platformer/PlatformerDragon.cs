@@ -19,10 +19,19 @@ public class PlatformerDragon : MonoBehaviour
     float jumpTimer, jumpDelayTimer;
     bool touchingGround;
 
+    GameObject body;
+    SpriteRenderer bodySprite;
+    Animator bodyAnimator;
+
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.centerOfMass = Vector3.zero;
         jumpTimer = jumpTime;
+
+        body = transform.GetChild(0).gameObject;
+        bodySprite = body.GetComponent<SpriteRenderer>();
+        bodyAnimator = body.GetComponent<Animator>();
     }
 
     void Update ()
@@ -32,6 +41,8 @@ public class PlatformerDragon : MonoBehaviour
             jumpDelayTimer = JumpDelay;
             jumpTimer = 0;
             rb.angularVelocity = 0;
+
+            bodyAnimator.Play("DragonPlatformer_flap", 0, 0);
         }
         jumpDelayTimer -= Time.deltaTime;
         jumpTimer += Time.deltaTime;
@@ -46,16 +57,19 @@ public class PlatformerDragon : MonoBehaviour
 
         bool grounded = touchingGround && vert <= GroundedThreshold;
 
-        if (!grounded && !jumping)
-        {
-            var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-            rb.MoveRotation(rb.rotation + rotateDelta);
-        }
-
         if (grounded)
         {
             rb.velocity = Vector2.zero;
             rb.MovePosition(rb.position + Vector2.right * MoveSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
+        }
+        else
+        {
+            if (!jumping)
+            {
+                var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+                rb.MoveRotation(rb.rotation + rotateDelta);
+            }
+            bodySprite.flipY = effectiveRotation > 90 && effectiveRotation < 270;
         }
 
         Vector2 rotDir;
