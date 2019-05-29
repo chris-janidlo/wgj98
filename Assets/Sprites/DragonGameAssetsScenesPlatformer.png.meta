@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: d66011ef73d87e64aae9e90c334dce70
+guid: 9c3e1fad76049954aa2d527e5cff7884
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Strawberry
-    21300002: Strawberry_Pair
-    21300004: Gem
-    21300006: Cleaning
-    21300008: Strawberry Pair
-    21300010: Cleaner
-    21300012: Book
+    21300000: Background
+    21300002: Tree
+    21300004: Cloud 1
+    21300006: Cloud 2
+    21300008: Cloud 3
+    21300010: Cloud 4
+    21300012: Cloud 5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -102,101 +102,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Strawberry
+      name: Background
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 852
+        width: 3635
+        height: 1080
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08eecc739bf95934da76704fbb07d91d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree
       rect:
         serializedVersion: 2
         x: 98
-        y: 2231
-        width: 182
-        height: 222
+        y: 250
+        width: 426
+        height: 414
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abb274873a271b747a375e0d4fa0ce8e
+      spriteID: 2356277e6e86ed34cbbc0b53129a2b24
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Strawberry Pair
+      name: Cloud 1
       rect:
         serializedVersion: 2
-        x: 406
-        y: 2189
-        width: 275
-        height: 307
+        x: 707
+        y: 597
+        width: 272
+        height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a5bb5999711f3479d98beea5e7edd2
+      spriteID: 248b2288d0a8fb545aa8f4a2ee738562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gem
+      name: Cloud 2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 1636
-        width: 253
-        height: 309
+        x: 1247
+        y: 534
+        width: 350
+        height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9d5dc73d424344781b98f1ec6dae1e
+      spriteID: 4e74ace4273febb42a921c06e9c137af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cleaner
+      name: Cloud 3
       rect:
         serializedVersion: 2
-        x: 98
-        y: 1010
-        width: 558
-        height: 279
+        x: 1783
+        y: 597
+        width: 226
+        height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3792a8bd7e413ca4592b9926b017e1bc
+      spriteID: 535fc1e4e96c74549a0e3175aff10d8a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Book
+      name: Cloud 4
       rect:
         serializedVersion: 2
-        x: 179
-        y: 190
-        width: 558
-        height: 533
+        x: 707
+        y: 271
+        width: 219
+        height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40689fc4e78360e409b33d0a5c31aa57
+      spriteID: 617b900646f047f4483338534b65c88e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud 5
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 271
+        width: 260
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c20cae154cc0ac44a1a42b9e8101e99
       vertices: []
       indices: 
       edges: []
@@ -204,7 +244,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 026922ceb1c3b4840baa8f7ab075da44
+    spriteID: 0871379783e81034aae5e880fe538ba5
     vertices: []
     indices: 
     edges: []
