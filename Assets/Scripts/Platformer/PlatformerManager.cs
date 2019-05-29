@@ -1,13 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using crass;
 
 public class PlatformerManager : MonoBehaviour
 {
+    [Serializable]
+    public class GemPatternGroup
+    {
+        public List<GemPattern> Patterns;
+    }
+
+    public List<GemPatternGroup> Levels;
+
+    [SerializeField]
+    int level, subLevel;
+
+    List<GemPattern> currentPatterns => Levels[level].Patterns;
+
     void Start ()
     {
+        currentPatterns.ShuffleInPlace();
+        spawnNextPattern();
         generateScreenEdgeColliders();
+    }
+
+    void spawnNextPattern ()
+    {
+        GemPattern next = Instantiate(currentPatterns[subLevel]);
+        next.AllGemsCollected.AddListener(spawnNextPattern);
+
+        subLevel++;
+        if (subLevel == currentPatterns.Count)
+        {
+            level++;
+            subLevel = 0;
+            currentPatterns.ShuffleInPlace();
+        }
     }
 
     // from https://forum.unity.com/threads/collision-with-sides-of-screen.228865/#post-4290190
