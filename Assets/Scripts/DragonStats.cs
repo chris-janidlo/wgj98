@@ -64,4 +64,24 @@ public class DragonStats : Singleton<DragonStats>
         Hunger.Update();
         Love.Update();
     }
+
+    public Meter GetMeterByType (MeterType type)
+    {
+        switch (type)
+        {
+            case MeterType.Cleanliness:
+                return Cleanliness;
+            case MeterType.Hunger:
+                return Hunger;
+            case MeterType.Love:
+                return Love;
+            default:
+                throw new Exception($"unexpected meter type {type}");
+        }
+    }
+}
+
+public enum MeterType
+{
+    Cleanliness, Hunger, Love
 }
