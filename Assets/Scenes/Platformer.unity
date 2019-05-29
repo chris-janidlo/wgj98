@@ -640,30 +640,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98432753bb768834899235a7b5ee2181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 10
-  GroundedThreshold: 0.2
-  ContactThreshold: 1
-  TurnSpeed: 180
+  MoveSpeed: 8
   DropSpeed: -9
-  CriticalVerticality: 0.05
   JumpDelay: 0.4
+  GroundedThreshold: 0.1
+  ContactThreshold: 1
+  CriticalVerticality: 0.05
+  TurnSpeed: 180
   JumpCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0.3
-      inSlope: -0.7857143
-      outSlope: -0.7857143
+      inSlope: -0.71428573
+      outSlope: -0.71428573
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.7
-      value: -0.25
-      inSlope: -0.7857143
-      outSlope: -0.7857143
+      value: -0.2
+      inSlope: -0.71428573
+      outSlope: -0.71428573
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

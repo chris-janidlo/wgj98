@@ -5,7 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float MoveSpeed, GroundedThreshold, ContactThreshold, TurnSpeed, DropSpeed, CriticalVerticality, JumpDelay;
+    public float MoveSpeed, DropSpeed, JumpDelay;
+    [Range(0, 360)]
+    public float TurnSpeed;
+    [Range(0, 1)]
+    public float ContactThreshold, GroundedThreshold, CriticalVerticality;
     public AnimationCurve JumpCurve;
 
     float jumpTime => JumpCurve.keys[JumpCurve.keys.Length - 1].time;
@@ -27,6 +31,7 @@ public class PlatformerDragon : MonoBehaviour
         {
             jumpDelayTimer = JumpDelay;
             jumpTimer = 0;
+            rb.angularVelocity = 0;
         }
         jumpDelayTimer -= Time.deltaTime;
         jumpTimer += Time.deltaTime;
