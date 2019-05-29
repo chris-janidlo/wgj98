@@ -28,6 +28,7 @@ public class PlatformerManager : MonoBehaviour
     List<GemPattern> currentPatterns => Levels[level].Patterns;
 
     float timer;
+    bool ending;
 
     IEnumerator Start ()
     {
@@ -35,12 +36,18 @@ public class PlatformerManager : MonoBehaviour
         timer = ModeTime;
         Time.timeScale = 0;
 
+        TimerText.gameObject.SetActive(false);
+        CenterText.gameObject.SetActive(true);
+
         for (int i = CountdownTime; i >= 1; i--)
         {
             CenterText.text = i.ToString();
             yield return new WaitForSecondsRealtime(1);
         }
 
+        Time.timeScale = 1;
+
+        TimerText.gameObject.SetActive(true);
         currentPatterns.ShuffleInPlace();
         spawnNextPattern();
 
@@ -51,11 +58,12 @@ public class PlatformerManager : MonoBehaviour
 
     void Update ()
     {
-        TimerText.text = String.Format("%d", Mathf.Clamp(timer, 0, ModeTime));
+        TimerText.text = Mathf.CeilToInt(Mathf.Clamp(timer, 0, ModeTime)).ToString();
 
         timer -= Time.deltaTime;
-        if (timer <= 0)
+        if (timer <= 0 && !ending)
         {
+            ending = true;
             StartCoroutine(endRoutine());
         }
     }
@@ -68,6 +76,7 @@ public class PlatformerManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(FinishTime);
         // load next scene
         Debug.Log("we outta heres");
+        Time.timeScale = 1;
     }
 
     void spawnNextPattern ()
@@ -78,7 +87,7 @@ public class PlatformerManager : MonoBehaviour
         subLevel++;
         if (subLevel == currentPatterns.Count)
         {
-            level++;
+            level = (level + 1) % Levels.Count;
             subLevel = 0;
             currentPatterns.ShuffleInPlace();
         }
