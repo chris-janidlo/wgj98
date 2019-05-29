@@ -664,6 +664,8 @@ MonoBehaviour:
   MoveSpeed: 8
   DropSpeed: -9
   JumpDelay: 0.4
+  MaxAnimationSpeed: 5
+  DragonSpeedForMaxAnimationSpeed: 15
   TurnSpeed: 180
   ContactThreshold: 1
   GroundedThreshold: 0.1

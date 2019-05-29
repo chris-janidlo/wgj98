@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float MoveSpeed, DropSpeed, JumpDelay;
+    public float MoveSpeed, DropSpeed, JumpDelay, MaxAnimationSpeed, DragonSpeedForMaxAnimationSpeed;
     [Range(0, 360)]
     public float TurnSpeed;
     [Range(0, 1)]
@@ -26,7 +26,7 @@ public class PlatformerDragon : MonoBehaviour
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.centerOfMass = Vector3.zero;
+        rb.centerOfMass = Vector3.zero; // so we rotate around the head instead of the body
         jumpTimer = jumpTime;
 
         body = transform.GetChild(0).gameObject;
@@ -36,6 +36,9 @@ public class PlatformerDragon : MonoBehaviour
 
     void Update ()
     {
+        jumpDelayTimer -= Time.deltaTime;
+        jumpTimer += Time.deltaTime;
+
         if (jumpDelayTimer <= 0 && Input.GetButton ("Jump"))
         {
             jumpDelayTimer = JumpDelay;
@@ -44,8 +47,17 @@ public class PlatformerDragon : MonoBehaviour
 
             bodyAnimator.Play("DragonPlatformer_flap", 0, 0);
         }
-        jumpDelayTimer -= Time.deltaTime;
-        jumpTimer += Time.deltaTime;
+        
+        if (jumping)
+        {
+            // flap animation is timed precisely, want to preserve that
+            bodyAnimator.speed = 1;
+        }
+        else
+        {
+            var animationSpeedLerpent = Mathf.Clamp(rb.velocity.magnitude, 0, DragonSpeedForMaxAnimationSpeed) / DragonSpeedForMaxAnimationSpeed;
+            bodyAnimator.speed = Mathf.Lerp(1, MaxAnimationSpeed, animationSpeedLerpent);
+        }
     }
 
     void FixedUpdate ()
@@ -92,11 +104,13 @@ public class PlatformerDragon : MonoBehaviour
                 throw new System.Exception($"unexpected rotation value {effectiveRotation}");
         }
 
+        // simulate stalling by letting the rigidbody fall however it wants to if its vertical enough
         if (vert >= CriticalVerticality)
         {
             rotDir.y = Mathf.Sign(rb.velocity.y);
         }
 
+        // simulate glider drag by redistributing the velocity among the x and y axes depending on how vertical we are
         var newVel = new Vector2
         (
             rotDir.x * (1 - vert),
@@ -127,7 +141,7 @@ public class PlatformerDragon : MonoBehaviour
         touchingGround = false;
     }
 
-    // returns 0 if perfectly horizontal, 1 if perfectly vertical, or something in between
+    // returns 0 if we're perfectly horizontal, 1 if perfectly vertical, or something in between
     float verticality (float angleDegrees)
     {
         // triangle wave with period of 90, min of 0, and max of 1
