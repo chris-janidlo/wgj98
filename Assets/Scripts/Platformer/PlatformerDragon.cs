@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float MoveSpeed, GroundedThreshold, TurnSpeed, DropSpeed, CriticalVerticality, JumpDelay;
+    public float MoveSpeed, GroundedThreshold, ContactThreshold, TurnSpeed, DropSpeed, CriticalVerticality, JumpDelay;
     public AnimationCurve JumpCurve;
 
     float jumpTime => JumpCurve.keys[JumpCurve.keys.Length - 1].time;
@@ -13,7 +13,7 @@ public class PlatformerDragon : MonoBehaviour
 
     Rigidbody2D rb;
     float jumpTimer, jumpDelayTimer;
-    bool grounded;
+    bool touchingGround;
 
     void Start ()
     {
@@ -34,6 +34,13 @@ public class PlatformerDragon : MonoBehaviour
 
     void FixedUpdate ()
     {
+        // rb.rotation doesn't constrain itself to [0, 360), while transform.rotation.eulerAngles.z lags behind by a frame
+        var effectiveRotation = Mathf.Repeat(rb.rotation, 360);
+
+        var vert = verticality(effectiveRotation);
+
+        bool grounded = touchingGround && vert <= GroundedThreshold;
+
         if (!grounded && !jumping)
         {
             var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
@@ -45,9 +52,6 @@ public class PlatformerDragon : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.MovePosition(rb.position + Vector2.right * MoveSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
         }
-
-        // rb.rotation doesn't constrain itself to [0, 360), while transform.rotation.eulerAngles.z lags behind by a frame
-        var effectiveRotation = Mathf.Repeat(rb.rotation, 360);
 
         Vector2 rotDir;
         switch ((int) (effectiveRotation / 90))
@@ -68,8 +72,6 @@ public class PlatformerDragon : MonoBehaviour
             default:
                 throw new System.Exception($"unexpected rotation value {effectiveRotation}");
         }
-
-        var vert = verticality(effectiveRotation);
 
         if (vert >= CriticalVerticality)
         {
@@ -94,16 +96,16 @@ public class PlatformerDragon : MonoBehaviour
     {
         foreach (var contact in col.contacts)
         {
-            if (contact.normal.y >= GroundedThreshold)
+            if (contact.normal.y >= ContactThreshold)
             {
-                grounded = true;
+                touchingGround = true;
             }
         }
     }
 
     void OnCollisionExit2D (Collision2D col)
     {
-        grounded = false;
+        touchingGround = false;
     }
 
     // returns 0 if perfectly horizontal, 1 if perfectly vertical, or something in between
