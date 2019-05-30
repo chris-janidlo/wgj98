@@ -138,6 +138,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  CollectedClip: {fileID: 8300000, guid: 779b252a2118c884097f2e65770ae3d7, type: 3}
   Value: 1
 --- !u!114 &1775442574366115695
 MonoBehaviour:

@@ -9,6 +9,7 @@ using crass;
 public class DragonEmoting : Singleton<DragonEmoting>, IPointerClickHandler
 {
     public UnityEvent Clicked;
+    public List<AudioClip> HappySounds;
     public float PetDelay;
     public float PetLoveIncrease;
     public int PetMoneyIncrease;
@@ -35,6 +36,7 @@ public class DragonEmoting : Singleton<DragonEmoting>, IPointerClickHandler
             Animator.Play("DragonIdle_happy");
             DragonStats.Instance.Love.Value += PetLoveIncrease;
             Bank.Instance.IncrementMoney(PetMoneyIncrease);
+            SFX.Play(HappySounds);
         }
 
         Clicked.Invoke();
