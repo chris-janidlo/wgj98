@@ -6703,6 +6703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1985212836}
   - component: {fileID: 1985212839}
+  - component: {fileID: 1985212840}
   - component: {fileID: 1985212838}
   - component: {fileID: 1985212837}
   m_Layer: 5
@@ -6711,7 +6712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1985212836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6810,6 +6811,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985212835}
   m_CullTransparentMesh: 0
+--- !u!114 &1985212840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985212835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab54f05e8574e9f46b26835b322a2a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1991056737
 GameObject:
   m_ObjectHideFlags: 0
@@ -7635,6 +7648,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 133703903554642413, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 589621456707153297, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572613316739779414, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8979736490257598707, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_Name
@@ -7753,12 +7781,12 @@ PrefabInstance:
     - target: {fileID: 8979736488968621938, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979736488968621938, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469ffb2073802754cbac31dcafe22f97, type: 3}
