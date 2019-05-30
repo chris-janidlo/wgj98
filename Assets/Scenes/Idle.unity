@@ -6562,7 +6562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e704464cd50fbc498f8d2df7870a46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CooldownTime: 300
+  CooldownTime: 180
   Button: {fileID: 1734401542}
   CooldownDisplay: {fileID: 858538771}
   timer: 0
