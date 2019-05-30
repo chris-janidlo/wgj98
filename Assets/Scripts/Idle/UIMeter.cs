@@ -58,6 +58,7 @@ public class UIMeter : MonoBehaviour
             fill.type = Image.Type.Filled;
             fill.fillMethod = Image.FillMethod.Vertical;
             fill.fillOrigin = 0; // bottom
+            fill.fillAmount = 0;
 
             empty.transform.position = pos;
             fill.transform.position = pos;
