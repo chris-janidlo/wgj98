@@ -33,6 +33,8 @@ public class DragonStats : Singleton<DragonStats>
         }
     }
 
+    public string Name;
+
     public Meter Cleanliness, Hunger, Love;
 
     public float Happiness
