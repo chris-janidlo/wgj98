@@ -9,19 +9,25 @@ public class CutsceneManager : MonoBehaviour
     public GameObject Namer;
     public DragonStats StatsPrefab;
 
+    public AudioSource DragonSource;
+    public AudioClip LouderSad, Happy1, Happy2;
+
     public void TextRead (int text)
     {
         switch (text)
         {
             case 0:
-                // play louder sad sound
+                DragonSource.clip = LouderSad;
+                DragonSource.Play(0);
                 break;
             case 2:
-                // play cute sound
+                DragonSource.clip = Happy1;
+                DragonSource.Play(0);
                 DragonAnimator.SetFloat("Happiness", 100);
                 break;
             case 3:
-                // play happy sound
+                DragonSource.clip = Happy2;
+                DragonSource.Play(0);
                 Namer.SetActive(true);
                 break;
         }
