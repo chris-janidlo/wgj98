@@ -472,6 +472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2174476e393597148a44fe6a33d7d5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PetDelay: 1.5
+  PetLoveIncrease: 5
+  PetMoneyIncrease: 1
   Animator: {fileID: 39465234}
 --- !u!1 &69908217
 GameObject:

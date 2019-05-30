@@ -5,11 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using crass;
 
-public class DragonEmoting : Singleton<DragonEmoting>, IPointerEnterHandler, IPointerExitHandler
+public class DragonEmoting : Singleton<DragonEmoting>, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    public float PetDelay;
+    public float PetLoveIncrease;
+    public int PetMoneyIncrease;
     public Animator Animator;
 
     public bool Hovered { get; private set; }
+    
+    float petTimer;
 
     void Awake ()
     {
@@ -19,6 +24,7 @@ public class DragonEmoting : Singleton<DragonEmoting>, IPointerEnterHandler, IPo
 	void Update ()
     {
         Animator.SetFloat("Happiness", DragonStats.Instance.Happiness);
+        petTimer -= Time.deltaTime;
     }
 
 	public void OnPointerEnter(PointerEventData eventData)
@@ -29,5 +35,16 @@ public class DragonEmoting : Singleton<DragonEmoting>, IPointerEnterHandler, IPo
 	public void OnPointerExit(PointerEventData eventData)
 	{
         Hovered = false;
+	}
+
+	public void OnPointerClick(PointerEventData eventData)
+	{
+        if (petTimer <= 0)
+        {
+            petTimer = PetDelay;
+            Animator.Play("DragonIdle_happy");
+            DragonStats.Instance.Love.Value += PetLoveIncrease;
+            Bank.Instance.IncrementMoney(PetMoneyIncrease);
+        }
 	}
 }
