@@ -9,6 +9,6 @@ public class Strawberry : UsableItem
 	protected override void useItem ()
 	{
         DragonStats.Instance.Hunger.Value += HungerAmount;
-        // TODO: animate eating
+        DragonEmoting.Instance.Animator.Play("DragonIdle_eating");
 	}
 }

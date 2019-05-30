@@ -13,17 +13,16 @@ public abstract class UsableItem : MonoBehaviour
     void Start ()
     {
         Locked = true;
+
+        DragonEmoting.Instance.Clicked.AddListener(() => {
+            useItem();
+            Destroy(gameObject);
+        });
     }
 
     void Update ()
     {
         transform.position = Input.mousePosition;
-
-        if (Input.GetMouseButton(0) && DragonEmoting.Instance.Hovered)
-        {
-            useItem();
-            Destroy(gameObject);
-        }
 
         if (Input.GetMouseButton(1))
         {
