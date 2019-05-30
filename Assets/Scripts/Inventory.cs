@@ -22,4 +22,78 @@ public class Inventory : Singleton<Inventory>
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    public int GetAmount (InventoryID id)
+    {
+        switch (id)
+        {
+            case InventoryID.Strawberry:
+                return Strawberries;
+
+            case InventoryID.StrawberryPair:
+                return StrawberryPairs;
+
+            case InventoryID.Cleaner:
+                return CleaningSupplies;
+
+            case InventoryID.BookOne:
+                return BookOne ? 1 : 0;
+
+            case InventoryID.BookTwo:
+                return BookTwo ? 1 : 0;
+
+            case InventoryID.BookThree:
+                return BookThree ? 1 : 0;
+
+            default:
+                throw new System.Exception($"unexpected id {id}");
+        }
+    }
+
+    public void SetAmount (InventoryID id, int value)
+    {
+        switch (id)
+        {
+            case InventoryID.Strawberry:
+                Strawberries = value;
+                break;
+
+            case InventoryID.StrawberryPair:
+                StrawberryPairs = value;
+                break;
+
+            case InventoryID.Cleaner:
+                CleaningSupplies = value;
+                break;
+                
+            default:
+                throw new System.Exception($"unexpected id {id}");
+        }
+    }
+
+    public int GetAndIncrementChapter (InventoryID id)
+    {
+        switch (id)
+        {
+            case InventoryID.BookOne:
+                BookOneChapter++;
+                return BookOneChapter - 1;
+            
+            case InventoryID.BookTwo:
+                BookTwoChapter++;
+                return BookTwoChapter - 1;
+
+            case InventoryID.BookThree:
+                BookThreeChapter++;
+                return BookThreeChapter - 1;
+
+            default:
+                throw new System.Exception($"unexpected id {id}");
+        }
+    }
+}
+
+public enum InventoryID
+{
+    Strawberry, StrawberryPair, Cleaner, BookOne, BookTwo, BookThree
 }

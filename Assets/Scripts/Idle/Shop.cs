@@ -51,28 +51,14 @@ public class Shop : MonoBehaviour
         BookThree.Price = BookThreePrice;
         applyInflation();
     }
-
-    void Update ()
-    {
-        if (Input.GetMouseButton(0) && !RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), Input.mousePosition))
-        {
-            SetOpenState(false);
-        }
-    }
     
     public void SetOpenState (bool value)
     {
-        if (openState == value) return;
-
-        openState = value;
-
         if (value)
         {
             applyInflation();
             removeOwnedBooks();
         }
-
-        transform.GetChild(0).gameObject.SetActive(value);
     }
 
     void applyInflation ()
