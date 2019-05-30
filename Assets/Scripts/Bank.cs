@@ -53,6 +53,6 @@ public class Bank : Singleton<Bank>
 
     public void CompoundMoney (float percent)
     {
-        IncrementMoney(_money * percent);
+        IncrementMoney(Mathf.Max(_money, 1) * percent);
     }
 }
