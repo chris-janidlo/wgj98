@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Book : UsableItem
 {
+    public TextBox Text;
+
     protected override void useItem ()
     {
         var chapter = Inventory.Instance.GetAndIncrementChapter(ID);
-        // TODO: read text
+        Instantiate(Text).transform.SetParent(transform.root, false);
     }
 }

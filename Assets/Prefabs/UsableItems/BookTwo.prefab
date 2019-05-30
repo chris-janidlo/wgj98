@@ -93,3 +93,4 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  Text: {fileID: 2729727776056310359, guid: 9fa42ed808d0d834597185ec1034257e, type: 3}
