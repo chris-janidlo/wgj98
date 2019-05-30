@@ -28,6 +28,7 @@ public class PlatformerManager : MonoBehaviour
 
     List<GemPattern> currentPatterns => Levels[level].Patterns;
 
+    [SerializeField]
     float timer;
     bool ending;
 
