@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using crass;
 
@@ -74,9 +75,8 @@ public class PlatformerManager : MonoBehaviour
         CenterText.text = "FINISH";
         
         yield return new WaitForSecondsRealtime(FinishTime);
-        // load next scene
-        Debug.Log("we outta heres");
         Time.timeScale = 1;
+        SceneManager.LoadScene("Idle");
     }
 
     void spawnNextPattern ()
