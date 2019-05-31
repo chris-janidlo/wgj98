@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float MoveSpeed, DropSpeed, JumpDelay, MaxAnimationSpeed, DragonSpeedForMaxAnimationSpeed;
+    public float MoveSpeed, DropSpeed, JumpDelay, MaxAnimationSpeed, DragonSpeedForMaxAnimationSpeed, NormalDrag, FasterDrag, NormalGrav, FasterGrav;
     [Range(0, 360)]
     public float TurnSpeed;
     [Range(0, 1)]
@@ -32,6 +32,10 @@ public class PlatformerDragon : MonoBehaviour
         body = transform.GetChild(0).gameObject;
         bodySprite = body.GetComponent<SpriteRenderer>();
         bodyAnimator = body.GetComponent<Animator>();
+
+        var faster = DragonStats.Instance.BookTwoUnlocked;
+        rb.drag = faster ? FasterDrag : NormalDrag;
+        rb.gravityScale = faster ? FasterGrav : NormalGrav;
     }
 
     void Update ()
