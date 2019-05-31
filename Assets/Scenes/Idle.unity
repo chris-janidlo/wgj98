@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5778,15 +5778,15 @@ MonoBehaviour:
   CleanerInflation:
     InflationData:
     - ActivatingWorth: 0
-      Price: 15
+      Price: 8
     - ActivatingWorth: 50
-      Price: 30
+      Price: 16
     - ActivatingWorth: 100
-      Price: 60
+      Price: 32
     - ActivatingWorth: 150
-      Price: 120
+      Price: 64
     - ActivatingWorth: 200
-      Price: 240
+      Price: 128
     Counter: 0
   BookOnePrice: 100
   BookTwoPrice: 300
@@ -7648,21 +7648,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 133703903554642413, guid: 469ffb2073802754cbac31dcafe22f97,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 589621456707153297, guid: 469ffb2073802754cbac31dcafe22f97,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572613316739779414, guid: 469ffb2073802754cbac31dcafe22f97,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8979736490257598707, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_Name
@@ -7787,6 +7772,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589621456707153297, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133703903554642413, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572613316739779414, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469ffb2073802754cbac31dcafe22f97, type: 3}

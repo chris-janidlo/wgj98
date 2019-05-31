@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1374f01c613f97947a3df74a4c4fea32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   Cleanliness:
     _value: 50
     DecayByValue:
@@ -207,6 +208,9 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     HappinessWeight: 0.4
+  BookOneUnlocked: 0
+  BookTwoUnlocked: 0
+  BookThreeUnlocked: 0
 --- !u!114 &3146294260537167053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,16 +228,25 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: -0.02
+      inSlope: 0.00066666666
+      outSlope: 0.00066666666
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 30
+      value: 0
+      inSlope: 0.00023207496
+      outSlope: 0.00023207496
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 75
-      value: 0.005
+      value: 0.01
       inSlope: 0.00017523451
       outSlope: 0.00017523451
       tangentMode: 0
@@ -242,7 +255,7 @@ MonoBehaviour:
       outWeight: 0.21819839
     - serializedVersion: 3
       time: 95
-      value: 0.01
+      value: 0.02
       inSlope: 0.0005338678
       outSlope: 0.0005338678
       tangentMode: 0
@@ -251,9 +264,9 @@ MonoBehaviour:
       outWeight: 0.37520903
     - serializedVersion: 3
       time: 100
-      value: 0.02
-      inSlope: 0.0019999999
-      outSlope: 0.0019999999
+      value: 0.04
+      inSlope: 0.0039999997
+      outSlope: 0.0039999997
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -281,6 +294,3 @@ MonoBehaviour:
   BookOne: 0
   BookTwo: 0
   BookThree: 0
-  BookOneChapter: 0
-  BookTwoChapter: 0
-  BookThreeChapter: 0
