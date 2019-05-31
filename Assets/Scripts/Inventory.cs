@@ -8,8 +8,6 @@ public class Inventory : Singleton<Inventory>
     public int Strawberries, StrawberryPairs, CleaningSupplies;
     public bool BookOne, BookTwo, BookThree;
 
-    public int BookOneChapter, BookTwoChapter, BookThreeChapter;
-
     void Awake ()
     {
         if (SingletonGetInstance() != null)
@@ -66,27 +64,6 @@ public class Inventory : Singleton<Inventory>
                 CleaningSupplies = value;
                 break;
                 
-            default:
-                throw new System.Exception($"unexpected id {id}");
-        }
-    }
-
-    public int GetAndIncrementChapter (InventoryID id)
-    {
-        switch (id)
-        {
-            case InventoryID.BookOne:
-                BookOneChapter++;
-                return BookOneChapter - 1;
-            
-            case InventoryID.BookTwo:
-                BookTwoChapter++;
-                return BookTwoChapter - 1;
-
-            case InventoryID.BookThree:
-                BookThreeChapter++;
-                return BookThreeChapter - 1;
-
             default:
                 throw new System.Exception($"unexpected id {id}");
         }

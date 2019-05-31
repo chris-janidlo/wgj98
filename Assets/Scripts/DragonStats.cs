@@ -37,6 +37,8 @@ public class DragonStats : Singleton<DragonStats>
 
     public Meter Cleanliness, Hunger, Love;
 
+    public bool BookOneUnlocked, BookTwoUnlocked, BookThreeUnlocked;
+
     public float Happiness
     {
         get

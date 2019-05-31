@@ -9,10 +9,23 @@ public class Book : UsableItem
 
     protected override void useItem ()
     {
-        var chapter = Inventory.Instance.GetAndIncrementChapter(ID);
         var text = Instantiate(Text);
         text.transform.SetParent(transform.root, false);
         SFX.Play(PageEffect);
         text.ReadLine.AddListener(p => SFX.Play(PageEffect));
+        switch (ID)
+        {
+            case InventoryID.BookOne:
+                DragonStats.Instance.BookOneUnlocked = true;
+                break;
+                
+            case InventoryID.BookTwo:
+                DragonStats.Instance.BookTwoUnlocked = true;
+                break;
+
+            case InventoryID.BookThree:
+                DragonStats.Instance.BookThreeUnlocked = true;
+                break;
+        }
     }
 }
