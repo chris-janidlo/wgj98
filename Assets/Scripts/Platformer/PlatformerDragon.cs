@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDragon : MonoBehaviour
 {
-    public float MoveSpeed, DropSpeed, JumpDelay, MaxAnimationSpeed, DragonSpeedForMaxAnimationSpeed, NormalDrag, FasterDrag, NormalGrav, FasterGrav;
+    public float JumpDelay, MaxAnimationSpeed, DragonSpeedForMaxAnimationSpeed, NormalDrag, FasterDrag, NormalGrav, FasterGrav;
     [Range(0, 360)]
     public float TurnSpeed;
     [Range(0, 1)]
-    public float ContactThreshold, GroundedThreshold, CriticalVerticality;
+    public float CriticalVerticality;
     public AnimationCurve JumpCurve;
 
     float jumpTime => JumpCurve.keys[JumpCurve.keys.Length - 1].time;
@@ -17,7 +17,6 @@ public class PlatformerDragon : MonoBehaviour
 
     Rigidbody2D rb;
     float jumpTimer, jumpDelayTimer;
-    bool touchingGround;
 
     GameObject body;
     SpriteRenderer bodySprite;
@@ -73,21 +72,12 @@ public class PlatformerDragon : MonoBehaviour
 
         var vert = verticality(effectiveRotation);
 
-        bool grounded = touchingGround && vert <= GroundedThreshold;
-
-        if (grounded)
+        if (!jumping)
         {
-            rb.MovePosition(rb.position + Vector2.right * MoveSpeed * Input.GetAxisRaw("Horizontal") * Time.deltaTime);
+            var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+            rb.MoveRotation(rb.rotation + rotateDelta);
         }
-        else
-        {
-            if (!jumping)
-            {
-                var rotateDelta = TurnSpeed * -Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-                rb.MoveRotation(rb.rotation + rotateDelta);
-            }
-            bodySprite.flipY = effectiveRotation > 90 && effectiveRotation < 270;
-        }
+        bodySprite.flipY = effectiveRotation > 90 && effectiveRotation < 270;
 
         Vector2 rotDir;
         switch ((int) (effectiveRotation / 90))
@@ -119,7 +109,7 @@ public class PlatformerDragon : MonoBehaviour
         var newVel = new Vector2
         (
             rotDir.x * (1 - vert),
-            Input.GetButton("Drop") ? DropSpeed : rotDir.y * vert
+            rotDir.y * vert
         ).normalized * rb.velocity.magnitude;
 
         rb.velocity = newVel;
@@ -128,22 +118,6 @@ public class PlatformerDragon : MonoBehaviour
         {
             rb.MovePosition(rb.position + Vector2.up * JumpCurve.Evaluate(jumpTimer));
         }
-    }
-
-    void OnCollisionEnter2D (Collision2D col)
-    {
-        foreach (var contact in col.contacts)
-        {
-            if (contact.normal.y >= ContactThreshold)
-            {
-                touchingGround = true;
-            }
-        }
-    }
-
-    void OnCollisionExit2D (Collision2D col)
-    {
-        touchingGround = false;
     }
 
     // returns 0 if we're perfectly horizontal, 1 if perfectly vertical, or something in between
