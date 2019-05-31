@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UIMeter : MonoBehaviour
+public class UIMeter : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public MeterType AssociatedMeter;
     public int NumContainers;
@@ -31,6 +32,32 @@ public class UIMeter : MonoBehaviour
     {
         setContainerFills();
     }
+
+	public void OnPointerEnter (PointerEventData eventData)
+	{
+        string ttip = "";
+        switch (AssociatedMeter)
+        {
+            case MeterType.Cleanliness:
+                ttip = "how clean your dragon is";
+                break;
+            case MeterType.Hunger:
+                ttip = "how full your dragon's belly is";
+                break;
+            case MeterType.Love:
+                ttip = "how loved your dragon feels";
+                break;
+            default:
+                throw new System.Exception($"unexpected meter type {AssociatedMeter}");
+        }
+
+        Tooltip.Instance.Text = ttip;
+	}
+
+	public void OnPointerExit(PointerEventData eventData)
+	{
+        Tooltip.Instance.Text = "";
+	}
 
     void initializeContainers ()
     {
