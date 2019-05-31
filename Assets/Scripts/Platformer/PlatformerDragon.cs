@@ -39,7 +39,7 @@ public class PlatformerDragon : MonoBehaviour
         jumpDelayTimer -= Time.deltaTime;
         jumpTimer += Time.deltaTime;
 
-        if (jumpDelayTimer <= 0 && Input.GetButton ("Jump"))
+        if (jumpDelayTimer <= 0 && Input.GetButton("Flap"))
         {
             jumpDelayTimer = JumpDelay;
             jumpTimer = 0;
