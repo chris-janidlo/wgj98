@@ -10,8 +10,8 @@ public class DragonEmoting : Singleton<DragonEmoting>, IPointerClickHandler
 {
     public UnityEvent Clicked;
     public List<AudioClip> HappySounds;
-    public float PetDelay;
-    public float PetLoveIncrease;
+    public float PetDelay, PetLoveIncrease;
+    public float IncreasedSize;
     public int PetMoneyIncrease;
     public Animator Animator;
     
@@ -20,6 +20,14 @@ public class DragonEmoting : Singleton<DragonEmoting>, IPointerClickHandler
     void Awake ()
     {
         SingletonSetInstance(this, true);
+    }
+
+    void Start ()
+    {
+        if (DragonStats.Instance.BookOneUnlocked)
+        {
+            transform.localScale = Vector3.one * IncreasedSize;
+        }
     }
 
 	void Update ()
