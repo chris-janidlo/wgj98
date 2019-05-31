@@ -39,6 +39,8 @@ public class DragonStats : Singleton<DragonStats>
 
     public bool BookOneUnlocked, BookTwoUnlocked, BookThreeUnlocked;
 
+    public float PlayCooldown;
+
     public float Happiness
     {
         get

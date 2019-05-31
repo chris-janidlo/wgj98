@@ -1890,6 +1890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ModeTime: 100
+  CooldownTime: 180
   Levels:
   - Patterns:
     - {fileID: 8675880598697106886, guid: 23b867c5bb34549ceacfae998563cfe4, type: 3}

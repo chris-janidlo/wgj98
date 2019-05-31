@@ -14,7 +14,7 @@ public class PlatformerManager : MonoBehaviour
         public List<GemPattern> Patterns;
     }
 
-    public float ModeTime;
+    public float ModeTime, CooldownTime;
     public List<GemPatternGroup> Levels;
 
     public TextMeshProUGUI TimerText, CenterText;
@@ -77,6 +77,7 @@ public class PlatformerManager : MonoBehaviour
         
         yield return new WaitForSecondsRealtime(FinishTime);
         Time.timeScale = 1;
+        DragonStats.Instance.PlayCooldown = CooldownTime;
         SceneManager.LoadScene("Idle");
     }
 

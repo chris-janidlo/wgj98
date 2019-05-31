@@ -10,22 +10,18 @@ public class PlayButton : MonoBehaviour
     public Button Button;
     public Image CooldownDisplay;
 
-    [SerializeField]
-    float timer;
-
     void Start ()
     {
-        timer = CooldownTime;
         Button.interactable = false;
         Button.onClick.AddListener(() => SceneManager.LoadScene("Platformer"));
     }
 
     void Update ()
     {
-        CooldownDisplay.fillAmount = Mathf.Clamp(timer / CooldownTime, 0, 1);
+        CooldownDisplay.fillAmount = Mathf.Clamp(DragonStats.Instance.PlayCooldown / CooldownTime, 0, 1);
         
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        DragonStats.Instance.PlayCooldown -= Time.deltaTime;
+        if (DragonStats.Instance.PlayCooldown <= 0)
         {
             Button.interactable = true;
         }
