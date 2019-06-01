@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &900437467327684859
+--- !u!1 &4152549533419154714
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8687087594721208532}
-  - component: {fileID: 1206811820639322640}
-  - component: {fileID: 4169303335682707036}
+  - component: {fileID: 4152549533419154713}
+  - component: {fileID: 4152549533419154711}
+  - component: {fileID: 4152549533419154712}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -18,18 +18,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8687087594721208532
+--- !u!224 &4152549533419154713
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900437467327684859}
+  m_GameObject: {fileID: 4152549533419154714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7886944420236948149}
+  m_Father: {fileID: 4152549534574787557}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -37,21 +37,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -160, y: -160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1206811820639322640
+--- !u!222 &4152549533419154711
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900437467327684859}
+  m_GameObject: {fileID: 4152549533419154714}
   m_CullTransparentMesh: 0
---- !u!114 &4169303335682707036
+--- !u!114 &4152549533419154712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900437467327684859}
+  m_GameObject: {fileID: 4152549533419154714}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
-    textComponent: {fileID: 4169303335682707036}
+    textComponent: {fileID: 4152549533419154712}
     characterCount: 8
     spriteCount: 0
     spaceCount: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &7886944419490935623
+--- !u!1 &4152549533597722136
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,50 +169,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7886944419490935622}
-  - component: {fileID: 7886944419490935620}
-  - component: {fileID: 7886944419490935621}
+  - component: {fileID: 4152549533597722135}
+  - component: {fileID: 4152549533597722133}
+  - component: {fileID: 4152549533597722134}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7886944419490935622
+--- !u!224 &4152549533597722135
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886944419490935623}
+  m_GameObject: {fileID: 4152549533597722136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7886944420236948149}
-  m_RootOrder: 0
+  m_Father: {fileID: 4152549534574787557}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7886944419490935620
+  m_AnchoredPosition: {x: 9, y: 293}
+  m_SizeDelta: {x: 394.19995, y: 365.59998}
+  m_Pivot: {x: 1, y: 1}
+--- !u!222 &4152549533597722133
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886944419490935623}
+  m_GameObject: {fileID: 4152549533597722136}
   m_CullTransparentMesh: 0
---- !u!114 &7886944419490935621
+--- !u!114 &4152549533597722134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886944419490935623}
+  m_GameObject: {fileID: 4152549533597722136}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -226,7 +226,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300010, guid: d436d52b75d54c74d9e95642b006f19a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc1f14cfa36f8a445a40e92532178569, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!1 &7886944420236948150
+--- !u!1 &4152549534085234160
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,43 +243,118 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7886944420236948149}
-  - component: {fileID: 7886944420236948148}
+  - component: {fileID: 4152549534085234127}
+  - component: {fileID: 4152549534085234125}
+  - component: {fileID: 4152549534085234126}
   m_Layer: 5
-  m_Name: BookThreeText
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7886944420236948149
+--- !u!224 &4152549534085234127
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886944420236948150}
+  m_GameObject: {fileID: 4152549534085234160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7886944419490935622}
-  - {fileID: 8687087594721208532}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 4152549534574787557}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 672.8, y: 906.6}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7886944420236948148
+--- !u!222 &4152549534085234125
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152549534085234160}
+  m_CullTransparentMesh: 0
+--- !u!114 &4152549534085234126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886944420236948150}
+  m_GameObject: {fileID: 4152549534085234160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300002, guid: 791882268fd7cea46b2f2acb8fbcdad5, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!1 &4152549534574787558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4152549534574787557}
+  - component: {fileID: 4152549534574787556}
+  m_Layer: 5
+  m_Name: Feed Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4152549534574787557
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152549534574787558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4152549534085234127}
+  - {fileID: 4152549533419154713}
+  - {fileID: 4152549533597722135}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 67}
+  m_SizeDelta: {x: 1477.5, y: 360.3}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &4152549534574787556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152549534574787558}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc47ac1d53b5f254e8e1e055b2c0857b, type: 3}
@@ -296,16 +371,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   TargetText:
-  - "Little baby dragons might smoke when they\r\nSneeze.\r\n\r\nBurping after meal
-    times might also cause a \r\nWheeze.\r\n\r\nSnacking on some brimstone might add
-    spice\r\nTo your gullet.\r\n\r\nAnd getting over excited might make a cloud\r\nDrift
-    from your snout.\r\n\r\nIt's important to remember that every Dragon\r\nSmokes.\r\n"
-  - "Mommy dragons whisper and some vapor may appear,\r\n\r\nSinging to little dragons
-    with visible breath\r\nUpon the air.\r\n\r\nMommy dragons breath can set a fire
-    upon the \r\nStars.\r\n\r\nAnd after they go out you'll see them smoking in \r\nThe
-    sky.\r\n\r\nIt's important to remember that every Dragon\r\nSmokes.\r\n"
-  - "Daddy dragons flying suspend carbon when they \r\nExhale.\r\n\r\nThey can below
-    loudly, or raze towers with \r\nTheir flame.\r\n\r\nDaddy conversations with other
-    daddies can be\r\nAll smoke.\r\n\r\nAnd empty wind is flammable when Daddy is
-    about.\r\n\r\nIt's important to remember that every Dragon\r\nSmokes.\r\n"
-  Box: {fileID: 4169303335682707036}
+  - Magic Berries are my favourite.
+  - They're big so make sure you chew...
+  - '...or..swallow them whole.'
+  Box: {fileID: 4152549533419154712}

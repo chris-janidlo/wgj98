@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
+    public TextBox TextToSpawn;
     public float CooldownTime;
     public Button Button;
     public Image CooldownDisplay;
@@ -13,7 +14,7 @@ public class PlayButton : MonoBehaviour
     void Start ()
     {
         Button.interactable = false;
-        Button.onClick.AddListener(() => SceneManager.LoadScene("Platformer"));
+        Button.onClick.AddListener(buttonClicked);
     }
 
     void Update ()
@@ -25,5 +26,12 @@ public class PlayButton : MonoBehaviour
         {
             Button.interactable = true;
         }
+    }
+
+    void buttonClicked ()
+    {
+        var text = Instantiate(TextToSpawn);
+        text.transform.SetParent(transform.root, false);
+        text.Finished.AddListener(() => SceneManager.LoadScene("Platformer"));
     }
 }

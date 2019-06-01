@@ -93,6 +93,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  TextToSpawn: {fileID: 4152549534574787556, guid: c0ffd782a415dbe4195834019868938e,
+    type: 3}
   HappySounds:
   - {fileID: 8300000, guid: 525592444b092b348b9c64448397b7c3, type: 3}
   - {fileID: 8300000, guid: 5f4d665ca11d7ea42a71494521939a3d, type: 3}

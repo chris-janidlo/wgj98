@@ -13,6 +13,7 @@ public class Book : UsableItem
         text.transform.SetParent(transform.root, false);
         SFX.Play(PageEffect);
         text.ReadLine.AddListener(p => SFX.Play(PageEffect));
+        text.Finished.AddListener(() => Destroy(gameObject));
         switch (ID)
         {
             case InventoryID.BookOne:

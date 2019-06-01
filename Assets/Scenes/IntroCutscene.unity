@@ -1434,14 +1434,14 @@ PrefabInstance:
     - target: {fileID: 3900116402467066408, guid: d0e76bd0f3c8df1429424e3d99e28433,
         type: 3}
       propertyPath: TargetText.Array.data[2]
-      value: I don't think my parents would let bring you home I brought down the
-        west tower...though it is fireproof now.
+      value: I don't think my parents would let me bring you home after I brought
+        down the west tower...though it is fireproof now!
       objectReference: {fileID: 0}
     - target: {fileID: 3900116402467066408, guid: d0e76bd0f3c8df1429424e3d99e28433,
         type: 3}
       propertyPath: TargetText.Array.data[3]
-      value: You're only very little...I bet if I showed I could take care of you
-        I could bring you home.
+      value: "You're Only very little\u2026\r\nI bet if I showed that I could take
+        care of you they'd let you stay.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 3900116402467066408, guid: d0e76bd0f3c8df1429424e3d99e28433,
         type: 3}

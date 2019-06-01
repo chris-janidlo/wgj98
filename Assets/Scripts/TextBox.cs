@@ -32,8 +32,8 @@ public class TextBox : MonoBehaviour, IPointerClickHandler
         textIndex++;
         if (textIndex == TargetText.Count)
         {
-            Destroy(gameObject);
             Finished.Invoke();
+            Destroy(gameObject);
         }
         else
         {

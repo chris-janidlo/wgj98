@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6564,6 +6564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e704464cd50fbc498f8d2df7870a46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextToSpawn: {fileID: 4532441981258627690, guid: 651d8907b24226e45bfd779b054ab06b,
+    type: 3}
   CooldownTime: 180
   Button: {fileID: 1734401542}
   CooldownDisplay: {fileID: 858538771}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public abstract class UsableItem : MonoBehaviour
@@ -15,8 +16,8 @@ public abstract class UsableItem : MonoBehaviour
         Locked = true;
 
         DragonEmoting.Instance.Clicked.AddListener(() => {
+            GetComponent<Image>().enabled = false;
             useItem();
-            Destroy(gameObject);
         });
     }
 

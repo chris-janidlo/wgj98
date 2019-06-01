@@ -93,5 +93,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  Text: {fileID: 896047767529737264, guid: 101127521ba446542ab83729cf8c8146, type: 3}
   BubbleSound: {fileID: 8300000, guid: 7416bebf660b69c4a9722cc5b8f183be, type: 3}
   CleansingAmount: 20
