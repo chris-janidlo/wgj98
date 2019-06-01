@@ -37,9 +37,11 @@ public class DragonStats : Singleton<DragonStats>
 
     public Meter Cleanliness, Hunger, Love;
 
-    public bool BookOneUnlocked, BookTwoUnlocked, BookThreeUnlocked;
+    public bool BookOneUnlocked, BookTwoUnlocked, BookThreeUnlocked, IsBlue;
 
     public float PlayCooldown;
+
+    public Color BlueTint;
 
     public float Happiness
     {

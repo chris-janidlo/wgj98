@@ -7826,6 +7826,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2193832111097846255, guid: 469ffb2073802754cbac31dcafe22f97,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8979736490257598707, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_Name
@@ -7944,12 +7949,12 @@ PrefabInstance:
     - target: {fileID: 8979736488968621938, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979736488968621938, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 589621456707153297, guid: 469ffb2073802754cbac31dcafe22f97,
         type: 3}

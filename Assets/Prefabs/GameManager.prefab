@@ -211,6 +211,9 @@ MonoBehaviour:
   BookOneUnlocked: 0
   BookTwoUnlocked: 0
   BookThreeUnlocked: 0
+  IsBlue: 0
+  PlayCooldown: 0
+  BlueTint: {r: 0.14509805, g: 1, b: 1, a: 1}
 --- !u!114 &3146294260537167053
 MonoBehaviour:
   m_ObjectHideFlags: 0

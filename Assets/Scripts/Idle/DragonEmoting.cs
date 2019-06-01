@@ -32,6 +32,7 @@ public class DragonEmoting : Singleton<DragonEmoting>, IPointerClickHandler
 
 	void Update ()
     {
+        GetComponent<Image>().color = DragonStats.Instance.IsBlue ? DragonStats.Instance.BlueTint : Color.white;
         Animator.SetFloat("Happiness", DragonStats.Instance.Happiness);
         petTimer -= Time.deltaTime;
     }

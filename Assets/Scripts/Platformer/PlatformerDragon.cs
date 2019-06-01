@@ -38,6 +38,8 @@ public class PlatformerDragon : MonoBehaviour
 
     void Update ()
     {
+        GetComponentInChildren<SpriteRenderer>().color = DragonStats.Instance.IsBlue ? DragonStats.Instance.BlueTint : Color.white;
+    
         jumpDelayTimer -= Time.deltaTime;
         jumpTimer += Time.deltaTime;
 
