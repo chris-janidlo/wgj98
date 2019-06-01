@@ -220,6 +220,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,11 +290,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
 --- !u!4 &5348893450782366054 stripped
@@ -322,15 +322,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: 0.42999995
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.4
+      value: 10.309999
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
@@ -387,11 +392,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
 --- !u!4 &6813841446560568955 stripped
@@ -426,12 +426,12 @@ PrefabInstance:
     - target: {fileID: 1430905039287300833, guid: 3caddd3cb3d158942850e73373461341,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1430905039287300833, guid: 3caddd3cb3d158942850e73373461341,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.7
+      value: 5.61
       objectReference: {fileID: 0}
     - target: {fileID: 1430905039287300833, guid: 3caddd3cb3d158942850e73373461341,
         type: 3}
@@ -498,6 +498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,11 +567,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}

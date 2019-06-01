@@ -79,15 +79,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.6
+      value: -26.060001
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.3
+      value: 5.459999
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
@@ -144,13 +149,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
+--- !u!4 &5096978354246323377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5459602078447518651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7364320075787338115 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
@@ -163,12 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbe8d69779310248a3942dc2135986c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &5096978354246323377 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
-    type: 3}
-  m_PrefabInstance: {fileID: 5459602078447518651}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5459602078542129108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,6 +180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformerGem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
@@ -245,11 +250,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
@@ -520,12 +520,12 @@ PrefabInstance:
     - target: {fileID: 1430905039287300833, guid: 3caddd3cb3d158942850e73373461341,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.1
+      value: -7.460001
       objectReference: {fileID: 0}
     - target: {fileID: 1430905039287300833, guid: 3caddd3cb3d158942850e73373461341,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.1
+      value: 8.940001
       objectReference: {fileID: 0}
     - target: {fileID: 1430905039287300833, guid: 3caddd3cb3d158942850e73373461341,
         type: 3}
@@ -677,6 +677,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -742,11 +747,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
 --- !u!4 &5096978353951484949 stripped
@@ -778,6 +778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlatformerGem (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
@@ -844,11 +849,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
 --- !u!4 &5096978353094457374 stripped
@@ -884,12 +884,12 @@ PrefabInstance:
     - target: {fileID: 7690490680761757347, guid: d494a8e1f0f2a1541b44bd4103a89ccf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.4
+      value: -24.86
       objectReference: {fileID: 0}
     - target: {fileID: 7690490680761757347, guid: d494a8e1f0f2a1541b44bd4103a89ccf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.5
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 7690490680761757347, guid: d494a8e1f0f2a1541b44bd4103a89ccf,
         type: 3}
@@ -956,6 +956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1021,11 +1026,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
 --- !u!4 &5096978352997434833 stripped
@@ -1058,15 +1058,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformerGem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
+        type: 3}
+      propertyPath: Value
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.9
+      value: -7.26
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.2
+      value: 13.04
       objectReference: {fileID: 0}
     - target: {fileID: 970664141870878474, guid: 443c561603c465d43b6cdd13db98fdef,
         type: 3}
@@ -1122,11 +1127,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3312174588494627384, guid: 443c561603c465d43b6cdd13db98fdef,
-        type: 3}
-      propertyPath: Value
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c561603c465d43b6cdd13db98fdef, type: 3}
